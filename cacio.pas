@@ -1092,7 +1092,7 @@ if odd(ply) then s[ply]:=(-32000) else s[ply]:=32000;
 while (mv[ply,m[ply],5]>0) and (stop=0) and (not force) do
    begin
    update(mv[ply,m[ply],1],mv[ply,m[ply],2],mv[ply,m[ply],3],mv[ply,m[ply],4],mv[ply,m[ply],5]);
-   if (ply<max) or (chk) or (ply=max+1)
+   if (ply<pmax) and ((ply<max) or (chk) or (ply=max+1))
       then begin inc(n);w:=(-w);search;sc:=s[ply+1];dec(n);w:=(-w) end
       else sc:=score;
    if odd(ply)
@@ -1339,7 +1339,7 @@ procedure arrowsq;
 var a,c:byte;
 begin
 window(37,6,79,22);
-textbackground(4);textcolor(1);
+textbackground(1);textcolor(1);
 if pov<0 then begin xc:=9-xc;yc:=9-yc end;
 a:=(5*xc)-4;c:=(2*(9-yc)-1);
   writexy(a,c,'     ');
