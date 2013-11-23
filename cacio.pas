@@ -1,3 +1,4 @@
+{© Copyright Shawn Chidester <zd3nik@gmail.com>, 1994-2013. All rights reserved.}
 program cacio;
 
 uses crt,dos;
